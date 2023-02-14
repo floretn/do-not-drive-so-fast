@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Valentines Day</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('heart').style.left = (document.documentElement.clientWidth / 2 - 100)+ 'px'
+            document.getElementById('heart').style.top = (document.documentElement.clientHeight / 2 - 100) + 'px'
+            document.getElementById('textik').style.left = (document.documentElement.clientWidth / 2 - 115) + 'px'
+            document.getElementById('textik').style.top = (document.documentElement.clientHeight / 2 - 100) + 'px'
+        }
+    </script>
+</head>
+<style>
+    .heart {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform: rotate(45deg);
+        position: relative;
+    }
+    .heart::before,
+    .heart::after {
+        content : '';
+    display: block;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+    }
+    .heart::before {
+        top: -100px;
+        left: 0;
+    }
+    .heart::after {
+        top: 0;
+        left: -100px;
+    }
+</style>
+<body>
+
+    <h1 style="color: wheat; position: absolute; z-index: 999999; text-align: center" id="textik">
+        С днём расстрела<br/>
+        Чикатилло!
+    </h1>
+
+    <div id="main" class="wrapper">
+        <div class="heart" id="heart"></div>
+    </div>
+
+</body>
+</html>
