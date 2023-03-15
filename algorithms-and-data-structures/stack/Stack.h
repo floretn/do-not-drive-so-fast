@@ -1,22 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 
-template <typename T>
-
-struct Node {
-    T item;
-    Node<T>* next;
-
-    Node(T newItem) {
-        item = newItem;
-        next = nullptr;
-    }
-
-    Node(T newItem, Node<T> *nextNode) {
-        item = newItem;
-        next = nextNode;
-    }
-};
+#include "Node.h"
 
 template <typename T>
 
@@ -27,7 +12,7 @@ class Stack
         int capacity;
     public:
       Stack();
-      Stack(Stack<T>& olsStack);
+      Stack(Stack<T> *olsStack);
 
       void push(T item);
       T pop();
