@@ -3,6 +3,7 @@
 #include "Stack.cc"
  
 int main() {
+    //В этом (выделении памяти) нет логики, только понты
     Stack<int> *stack = new Stack<int>();
     stack->push(1);
     stack->push(2);
