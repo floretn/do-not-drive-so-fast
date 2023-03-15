@@ -4,9 +4,6 @@
 template <typename T>
 
 struct Node {
-    T item;
-    Node<T>* next;
-
     Node(T newItem) {
         item = newItem;
         next = nullptr;
@@ -16,6 +13,9 @@ struct Node {
         item = newItem;
         next = nextNode;
     }
+
+    T item;
+    Node<T>* next;
 };
 
 #endif // NODE_H

@@ -7,9 +7,6 @@ template <typename T>
 
 class Stack
 {
-    private:
-        Node<T>* top;
-        int capacity;
     public:
       Stack();
       Stack(Stack<T> *olsStack);
@@ -20,6 +17,10 @@ class Stack
       bool isEmpty();
 
       ~Stack();
+      
+    private:
+        Node<T>* top;
+        int capacity;
 };
 
 #endif // STACK_H
