@@ -10,13 +10,12 @@ Stack<T>::Stack() {
 template <typename T>
 
 Stack<T>::Stack(Stack<T> *oldStack) {
-    capacity = oldStack->capacity;
     top = new Node<T>(oldStack->top->item);
     Node<T> *currentNewNode = top;
     Node<T> *currentOldNode = oldStack->top->next;
     int i = 1;
     while (i < oldStack->capacity) {
-        currentNewNode -> next = new Node<T>(currentOldNode->item);
+        currentNewNode->next = new Node<T>(currentOldNode->item);
         currentNewNode = currentNewNode->next;
         currentOldNode = currentOldNode->next;
         i++;
