@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Dqueue.cc"
+#include "Dque.cc"
  
 int main() {
     Dqueue<int> *dque = new Dqueue<int>();
-    dque->pushBack(1);
+    dque->pushBack(111);
     dque->pushBack(2);
     dque->pushBack(3);
     dque->pushBack(4);

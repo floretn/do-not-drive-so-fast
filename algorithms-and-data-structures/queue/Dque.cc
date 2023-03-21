@@ -1,4 +1,4 @@
-#include "Dqueue.h"
+#include "Dque.h"
 
 template <typename T>
 
@@ -39,6 +39,7 @@ void Dqueue<T>::pushFront(T item){
         head = new Node<T>(item, nullptr, nullptr);
         tail = head;
     } else {
+        
         head = new Node<T>(item, nullptr, head);
     }
     capacity++;
@@ -51,6 +52,7 @@ void Dqueue<T>::pushBack(T item){
         tail = new Node<T>(item, nullptr, nullptr);
         head = tail;
     } else {
+
         tail = new Node<T>(item, tail, nullptr);
     }
     capacity++;
@@ -59,14 +61,16 @@ void Dqueue<T>::pushBack(T item){
 template <typename T>
 
 T Dqueue<T>::popFront(){
-    checkCapacity();
+    if (isEmpty()) {
+        throw std::out_of_range( "Dque is empty!" );
+    }
     Node<T> *oldHead = head;
     head = head->previous;
     capacity--;
-    if (capacity != 0) {
-        std::cout << oldHead->item << std::endl;
-        head->next = nullptr;
-    }
+    // if (capacity != 0) {
+    //     std::cout << oldHead->item << std::endl;
+    //     head->next = nullptr;
+    // }
     T item = oldHead->item;
     delete oldHead;
     return item;
@@ -75,13 +79,15 @@ T Dqueue<T>::popFront(){
 template <typename T>
 
 T Dqueue<T>::popBack(){
-    checkCapacity();
+    if (isEmpty()) {
+        throw std::out_of_range( "Dque is empty!" );
+    }
     Node<T> *oldTail = tail;
     tail = tail->next;
     capacity--;
-    if (capacity != 0){
-        tail->previous = nullptr;
-    }
+    // if (capacity != 0){
+    //     tail->previous = nullptr;
+    // }
     T item = oldTail->item;
     delete oldTail;
     return item;
@@ -90,14 +96,18 @@ T Dqueue<T>::popBack(){
 template <typename T>
 
 T Dqueue<T>::front(){
-    checkCapacity();
+    if (isEmpty()) {
+        throw std::out_of_range( "Dque is empty!" );
+    }
     return head->item;
 }
 
 template <typename T>
 
 T Dqueue<T>::back(){
-    checkCapacity();
+    if (isEmpty()) {
+        throw std::out_of_range( "Dque is empty!" );
+    }
     return tail->item;
 }
 
