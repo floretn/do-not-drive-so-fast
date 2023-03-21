@@ -1,15 +1,15 @@
-#ifndef DQUE_H
-#define DQUE_H
+#ifndef HASHTABLE_H
+#define HASHTABLE_H
 
 #include "Node.h"
 
 template <typename T>
 
-class Dque
+class HashTable
 {
     public:
-      Dque();
-      Dque(Dque<T> *olDque);
+      HashTable();
+      HashTable(HashTable<T> *old);
 
       void pushFront(T item);
       void pushBack(T item);
@@ -20,14 +20,13 @@ class Dque
       int size();
       bool isEmpty();
 
-      ~Dque();
+      ~HashTable();
       
     private:
         void checkCapacity();
 
-        Node<T>* head;
-        Node<T>* tail;
+        Node<T>[] 
         int capacity;
 };
 
-#endif // DQUE_H
+#endif // HASHTABLE_H
