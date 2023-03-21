@@ -1,15 +1,15 @@
-#ifndef DQUEUE_H
-#define DQUEUE_H
+#ifndef DQUE_H
+#define DQUE_H
 
 #include "Node.h"
 
 template <typename T>
 
-class Dqueue
+class Dque
 {
     public:
-      Dqueue();
-      Dqueue(Dqueue<T> *olsDqueue);
+      Dque();
+      Dque(Dque<T> *olsDque);
 
       void pushFront(T item);
       void pushBack(T item);
@@ -20,7 +20,7 @@ class Dqueue
       int size();
       bool isEmpty();
 
-      ~Dqueue();
+      ~Dque();
       
     private:
         void checkCapacity();
@@ -30,4 +30,4 @@ class Dqueue
         int capacity;
 };
 
-#endif // DQUEUE_H
+#endif // DQUE_H

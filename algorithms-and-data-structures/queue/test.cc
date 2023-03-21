@@ -2,13 +2,13 @@
 #include "Dque.cc"
  
 int main() {
-    Dqueue<int> *dque = new Dqueue<int>();
+    Dque<int> *dque = new Dque<int>();
     dque->pushBack(111);
     dque->pushBack(2);
     dque->pushBack(3);
     dque->pushBack(4);
 
-    // Dqueue<int> dqueDouble(dque);
+    Dque<int> dqueDouble(dque);
 
     dque->pushBack(5);
     dque->pushBack(6);
@@ -17,13 +17,11 @@ int main() {
         std::cout << dque->popFront() << std::endl;
     }
     
-
-    
-    // std::cout << dqueDouble.front() << std::endl;
-    // std::cout << dqueDouble.back() << std::endl;
-    
-    // std::cout << dque->front() << std::endl;
-    // std::cout << dque->back() << std::endl;
+    std::cout << dqueDouble.front() << std::endl;
+    std::cout << dqueDouble.back() << std::endl;
 
 
+    while (!dqueDouble.isEmpty()) {
+        std::cout << dqueDouble.popFront() << std::endl;
+    }
 }
